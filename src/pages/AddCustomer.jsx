@@ -12,9 +12,7 @@ const AddCustomer = () => {
     const [errorMessage, setErrorMessage] = useState(undefined);
     const [emailError, setEmailError] = useState(undefined);
 
-
     const navigate = useNavigate()
-
 
     const handleSignupSubmit = (e) => {
         e.preventDefault();
@@ -52,9 +50,6 @@ const AddCustomer = () => {
                 }
             });
     }
-
-
-
     return (
         <div className='AddCustomer'>
 
@@ -87,12 +82,9 @@ const AddCustomer = () => {
                     <p key={i} className='error'>
                         {error}
                     </p>
-
                 ))}
                 {emailError && <p className='error'>{emailError}</p>}
-
             </form>
-
         </div>
 
     )
