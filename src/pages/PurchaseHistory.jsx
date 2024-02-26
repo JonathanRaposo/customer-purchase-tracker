@@ -37,7 +37,7 @@ const PurchaseHistory = () => {
 
             {customer.length > 0 ? (
                 <>
-                    <p style={{ textAlign: 'center', margin: '30px 0' }}>Product list:</p>
+                    <p>Product list:</p>
                     <table>
                         <thead>
                             <tr>
@@ -67,7 +67,9 @@ const PurchaseHistory = () => {
                     display: 'block',
                     width: '100px',
                     margin: '0 auto',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '1.2em',
+                    fontWeight: 'bolder'
                 }}>Back</Link>
         </div>
     );
