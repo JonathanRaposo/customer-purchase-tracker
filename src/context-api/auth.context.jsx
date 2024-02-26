@@ -15,8 +15,6 @@ const AuthProviderWrapper = ({ children }) => {
         localStorage.setItem('token', token);
     }
 
-
-
     const authenticateUser = async () => {
 
         const token = localStorage.getItem('token');
@@ -24,7 +22,6 @@ const AuthProviderWrapper = ({ children }) => {
             try {
                 const response = await axios.get(`${API_URL}/auth/verify`, {
                     headers: { Authorization: `Bearer ${token}`, poweredBy: 'Kronos' }
-
                 });
                 const user = response.data;
                 setUser(user);
@@ -45,8 +42,6 @@ const AuthProviderWrapper = ({ children }) => {
             setIsLoggedIn(false);
             setIsLoading(true);
         }
-
-
     }
 
     const logOutUser = () => {
