@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
+* {
+  margin:0;
+  padding:0;
+}
+body{
+  font: 17px/1.5 'Lucida Grande', 'Lucida Sans Unicode';
+  color: #33333d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color:#33333d;
+}
+
+ul {
+  list-style: none;
+}
+/* Header /navbar styles */
+
+.main-header{
+  position: sticky;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100px;
+
+}
+/* main menu */
+
+.main-menu{
+  margin-right: 50px;
+
+}
+.name-wrapper{
+  margin-left:20px;
+}
+.name-wrapper span{
+  color: coral;
+  font-weight: bold;
+  font-family: 'Italiana';
+  text-transform: lowercase;
+  font-weight: bolder;
+  font-size: 1.3em;
+}
+.main-menu ul {
+  display: flex;
+}
+.main-menu ul li {
+  position: relative;
+  margin-right: 30px;
+  padding-bottom: 1px;
+}
+.main-menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 2px;
+  background: #33333d;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+.main-menu ul li a:hover::after{
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}
+.logout-btn{
+  color:#33333d;
+  text-transform: uppercase;
+  font: 17px/1.5 'Lucida Grande', 'Lucida Sans Unicode';
+  border:none;
+  background-color: #fff;
+  cursor: pointer;
+  
+}
+/* customers page */
+.customers-list{
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.2em;
+  transition: letter-spacing .5s ;
+  
+}
+.customers-list:hover{
+  letter-spacing: 2px;
+  color: coral;
+}
+.customers-heading{
+ text-align: center;
+ text-transform: uppercase;
+ margin: 20px auto 40px auto;
+}
+
+
+.expenses{
+  transition: color .5s;
+}
+.expenses:hover{
+  color: #fb6630;
+}
+
+.Customer h3{
+  text-align: center;
+  
+}
+.Customer div{
+ text-align: center;
+}
+/* table buttons */
+.update-link{
+  transition: color .5s;
+  font-size: 1.3em;
+}
+.update-link:hover{
+  color: coral;
+}
+.delete-btn {
+  border: none;
+  background-color: #fff;
+  margin-left: 10px;
+  font: 1.3em 'Lucida Grande', 'Lucida Sans Unicode';
+  color: #33333d;
+  transition: color .5s
+}
+
+.delete-btn:hover{
+  color: coral;
+}
+
+.AddCustomer form,
+.UpdateCustomer form,
+.SignupPage form,
+.LoginPage form
+{
+  width: 345px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.login-link,
+.signup-link{
+  display: block;
+  width: 300px;
+  margin: 6px auto;
+  text-align: center;
+  transition: color .5s;
+}
+.login-link:hover{
+  color:coral;
+
+}
+.signup-link:hover{
+  color:coral;
+
+}
+.UpdateCustomer h3{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.AddCustomer h3{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.SignupPage h3{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.LoginPage h3{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+form label{
+  width: 100px;
+}
+form input{
+  margin: 10px 0;
+  height: 1.5em;
+  padding: 4px;
+  font-family:'Lucida Grande';
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  color:#33333d;
+}
+#email-label{
+ width: 62px;
+  
+}
+.add-btn,
+.update-btn,
+.signup-btn,
+.login-btn{
+  width: 100px;
+  margin: 20px auto;
+  font-size: 1em;
+  font-family: 'Lucida Grande';
+  font-weight: 600;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+  transition: ease .5s background-color;
+}
+.signup-btn:hover{
+  background-color: coral;
+  color: #fff;
+}
+.update-btn:hover{
+  background-color: coral;
+  color: #fff;
+}
+.add-btn:hover{
+  background-color: coral;
+  color: #fff;
+}
+.login-btn:hover{
+  background-color: coral;
+  color: #fff;
+}
+.error{
+  background-color: #fc4b4b;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+
+#logo {
+  font: 150px 'Italiana', sans-serif;
+}
+#heading {
+  margin-top: 30%;
+  text-align: center;
+  width: 100%;
+}
+table{
+
+  border-collapse: collapse;
+  margin: 100px auto;
+  box-shadow: 1px 5px 10px lightgrey;
+  font-size: 26px;
+  
+
+}
+th, td{
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  
+  
+}
+th{
+  background-color: #f2f2f2;
+}
+.Purchases  h1{
+  font: 30px 'Lucida Grande';
+ text-align: center;
+ margin: 50px;
+ color:#33333d;
+
+}
+
+.history-link{
+  width: 100px;
+  margin: auto;
+}
+
+footer{
+  border-top: 1px solid #ccc;
+  width: 100%;
+  height: 200px;
+  margin-top: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+footer div{
+  color:#33333d;
+  font: 17px 'Lucida Grande', 'Lucida Sans Unicode';
+  text-transform: uppercase;
+ 
+}
