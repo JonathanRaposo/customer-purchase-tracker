@@ -8,9 +8,7 @@ const API_URL = 'http://localhost:5005/api';
 const Customers = () => {
     const [customers, setCustomers] = useState([]);
 
-
     const getCustomers = async () => {
-
         const token = localStorage.getItem('token');
 
         try {
@@ -23,7 +21,6 @@ const Customers = () => {
             setCustomers(data)
         } catch (err) {
             console.log(err);
-
         }
     }
 
