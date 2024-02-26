@@ -11,8 +11,6 @@ const PurchaseHistory = () => {
     const [message, setMessage] = useState(undefined);
     const { id } = useParams();
 
-
-
     useEffect(() => {
         const token = localStorage.getItem('token')
 
