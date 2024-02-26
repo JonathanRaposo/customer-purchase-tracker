@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../context-api/auth.context.jsx';
 
-
-
 const Header = () => {
     const { isLoggedIn, user, logOutUser } = useContext(AuthContext)
 
@@ -30,8 +28,7 @@ const Header = () => {
                                 <button className='logout-btn' onClick={logOutUser}>Log out</button>
                             </Link>
                         </li>
-                    </>
-                    ) : (<>
+                    </>) : (<>
                         <li>
                             <Link to="/">Home</Link>
                         </li>
