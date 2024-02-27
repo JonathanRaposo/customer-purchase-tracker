@@ -1,15 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useEffect } from 'react';
-import { Link, } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context-api/auth.context.jsx';
 import axios from 'axios'
 
 const API_URL = 'http://localhost:5005/api';
 
 const Customers = () => {
     const [customers, setCustomers] = useState([]);
+    const [successMessage, setSuccessMessage] = useState(undefined);
+    const { user, authenticateUser } = useContext(AuthContext);
+    const { user_id } = user;
 
+    const token = localStorage.getItem('token');
+    const navigate = useNavigate();
     const getCustomers = async () => {
-        const token = localStorage.getItem('token');
 
         try {
             const response = await axios(`${API_URL}/user/customers`,
@@ -28,8 +33,32 @@ const Customers = () => {
         getCustomers();
     }, []);
 
+    const handleDeleteAccount = async () => {
+        window.confirm('This action will delete your account.');
+        try {
+            const response = await axios.delete(`${API_URL}/users/${user_id}`,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+            setSuccessMessage(response.data.message);
+            localStorage.removeItem('token');
+            authenticateUser()
+            setTimeout(() => {
+                navigate('/');
+            }, 2000)
+        } catch (error) {
+            console.log('Error while deleting account: ', error)
+        }
+    }
+
     return (
-        <>
+        <div className='Customers'>
+            <div className='editAccount-link-wrapper'>
+                <Link to={`/users/${user_id}/update`}
+                    className='editAccount-link'>
+                    Edit account
+                </Link>
+                <button className='deleteAccount-btn' onClick={handleDeleteAccount}>Close Account</button>
+            </div>
             {customers.length > 0 ? (
                 <>
                     <h3 className='customers-heading'> Customer list</h3>
@@ -43,9 +72,10 @@ const Customers = () => {
                     ))}
                 </>
             ) : (
-                <h3 className='customers-heading'>No customers added to your list </h3>
+                <h3 className='customers-heading'>No customers added to your lists </h3>
             )}
-        </>
+            {successMessage && <p className='deletionMessage'>{successMessage}</p>}
+        </div>
     )
 
 }

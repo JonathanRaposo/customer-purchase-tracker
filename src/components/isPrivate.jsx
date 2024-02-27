@@ -9,7 +9,7 @@ const IsPrivate = ({ children }) => {
 
     if (!isLoggedIn) {
 
-        return <Navigate to="/" />
+        return <Navigate to="/login" />
     } else {
         return children;
     }

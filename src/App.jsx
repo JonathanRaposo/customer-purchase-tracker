@@ -12,6 +12,8 @@ import UpdateCustomer from "./pages/UpdateCustomer.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Footer from "./components/Footer.jsx";
 import IsPrivate from "./components/isPrivate.jsx";
+import UpdateUser from "./pages/UpdateUser.jsx";
+import UpdatePassword from "./pages/UpdatePassword.jsx";
 
 
 const App = () => {
@@ -26,8 +28,12 @@ const App = () => {
         <Route path="/addCustomer" element={<IsPrivate><AddCustomer /></IsPrivate>} />
         <Route path="/dashboard" element={<IsPrivate><Customers /></IsPrivate>} />
         <Route path="/customers/:id" element={<IsPrivate><Customer /></IsPrivate>} />
-        <Route path="/PurchaseHistory/:id" element={<IsPrivate><PurchaseHistory /></IsPrivate>} />
         <Route path="/customers/:id/update" element={<IsPrivate><UpdateCustomer /></IsPrivate>} />
+        <Route path="/PurchaseHistory/:id" element={<IsPrivate><PurchaseHistory /></IsPrivate>} />
+        <Route path="/users/:id/update" element={<IsPrivate><UpdateUser /></IsPrivate>} />
+        <Route path="/users/:id/password" element={<IsPrivate><UpdatePassword /></IsPrivate>} />
+
+
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>

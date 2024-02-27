@@ -32,7 +32,7 @@ const Customer = () => {
     }, [id]);
 
     const handleDeleteCustomer = () => {
-        window.alert('this will delete customer permanently from the database.');
+        window.confirm('This will delete customer permanently from the database.');
 
         const token = localStorage.getItem('token');
         axios

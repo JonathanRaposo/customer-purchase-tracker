@@ -12,7 +12,6 @@ const SignupPage = () => {
     const [errorMessage, setErrorMessage] = useState(undefined);
     const [otherError, setOtherError] = useState(undefined);
 
-
     const navigate = useNavigate();
     const { storeToken, authenticateUser } = useContext(AuthContext);
 

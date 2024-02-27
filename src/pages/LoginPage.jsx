@@ -11,11 +11,9 @@ const LoginPage = () => {
     const [errorMessage, setErrorMessage] = useState(undefined);
     const [otherError, setOtherError] = useState(undefined);
 
-
     const navigate = useNavigate();
     const { storeToken, authenticateUser } = useContext(AuthContext);
 
-    console.log(storeToken)
     const handleLogin = async (e) => {
         e.preventDefault();
 

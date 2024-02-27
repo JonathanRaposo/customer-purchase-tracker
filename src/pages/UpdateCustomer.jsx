@@ -54,7 +54,6 @@ const UpdateCustomer = () => {
             if (err.response.data.message) {
                 setEmailError(err.response.data.message);
                 return;
-
             }
 
             setErrorMessage(err.response.data.error);

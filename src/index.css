@@ -83,25 +83,7 @@ ul {
   cursor: pointer;
   
 }
-/* customers page */
-.customers-list{
-  display: block;
-  width: 200px;
-  text-align: center;
-  margin: 20px auto;
-  font-size: 1.2em;
-  transition: letter-spacing .5s ;
-  
-}
-.customers-list:hover{
-  letter-spacing: 2px;
-  color: coral;
-}
-.customers-heading{
- text-align: center;
- text-transform: uppercase;
- margin: 20px auto 40px auto;
-}
+
 
 
 .expenses{
@@ -142,7 +124,9 @@ ul {
 .AddCustomer form,
 .UpdateCustomer form,
 .SignupPage form,
-.LoginPage form
+.LoginPage form,
+.UpdateUser form,
+.UpdatePassword form
 {
   width: 345px;
   display: flex;
@@ -166,26 +150,17 @@ ul {
   color:coral;
 
 }
-.UpdateCustomer h3{
+.UpdateCustomer h3,
+.AddCustomer h3,
+.SignupPage h3,
+.LoginPage h3,
+.UpdateUser h3,
+.UpdatePassword h3{
   text-align: center;
   margin-top: 50px;
   margin-bottom: 30px;
 }
-.AddCustomer h3{
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-.SignupPage h3{
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-.LoginPage h3{
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
+
 form label{
   width: 100px;
 }
@@ -239,6 +214,7 @@ form input{
   color: #fff;
   text-align: center;
   margin-bottom: 0;
+  padding: 2px;
 }
 
 
@@ -247,7 +223,8 @@ form input{
   font: 150px 'Italiana', sans-serif;
 }
 #heading {
-  margin-top: 30%;
+  margin-top: 20%;
+  margin-bottom: 50%;
   text-align: center;
   width: 100%;
 }
@@ -289,6 +266,89 @@ th{
   margin: auto;
 }
 
+/* USER ACCOUNT STYLES */
+
+.UpdateUser h3{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 100px;
+
+}
+
+/* customer list in user page */
+.Customers {
+  position: relative;
+}
+/* customers page */
+.customers-list{
+  display: block;
+  width: 310px;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 1.2em;
+  transition: letter-spacing .5s ;
+  
+}
+.customers-list:hover{
+  letter-spacing: 2px;
+  color: coral;
+}
+.customers-heading,
+.deletionMessage{
+ text-align: center;
+ text-transform: uppercase;
+ margin: 50px auto 40px auto;
+}
+.deletionMessage{
+  text-align: center;
+  text-transform: uppercase;
+  margin: 50px auto 40px auto;
+  color: #fa462e;
+  font-weight: bolder;
+}
+.editAccount-link-wrapper{
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+   width: 200px;
+}
+.editAccount-link {
+  width:150px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: color .5s;
+}
+.editAccount-link:hover{
+  color: #f9652f
+}
+.editAccount-link-wrapper button{
+  width: 164px;
+  margin: 6px 10px 0 0;
+  font:17px/1.5 'Lucida Grande', 'Lucida Sans Unicode';
+  border: none;
+  background-color: #fff;
+  text-transform: uppercase;
+  transition: color .5s;
+
+}
+.editAccount-link-wrapper button:hover{
+  color: #f9652f
+
+}
+/* .UpdatePassword form {
+  width: 500px;
+  margin: 20px auto;
+}
+.UpdatePassword form input{
+  width: 200px;
+} */
+.UpdatePassword form label{
+  width: 200px;
+  display: inline
+} 
+
+/* end of user list styles - */
 footer{
   border-top: 1px solid #ccc;
   width: 100%;

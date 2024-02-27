@@ -60,8 +60,7 @@ const AuthProviderWrapper = ({ children }) => {
             isLoading,
             storeToken,
             authenticateUser,
-            logOutUser
-
+            logOutUser,
         }}>
             {children}
         </AuthContext.Provider>

@@ -29,12 +29,11 @@ const AddCustomer = () => {
                 requestBody,
                 { headers: { Authorization: `Bearer ${token}` } }
             )
-            .then((response) => {
-                console.log('response: ', response.data,)
+            .then(() => {
                 setFirstName('');
                 setlastName('');
                 setEmail('');
-                navigate('/customers');
+                navigate('/dashboard');
             })
             .catch((err) => {
                 console.log('Error: ', err);
